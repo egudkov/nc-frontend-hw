@@ -46,7 +46,7 @@ test('List pop() removes one element from the end of the list and returns it', (
 test('List shift() removes one element from the beginning of the list and returns it', () => {
     const firstElement = list.shift();
     expect(list.length).toBe(4);
-    expect(firstElement).toBe(1);
+    expect(list.get(0)).toBe(23);
 });
 
 test('List contains() checks if an element exist in the list', () => {

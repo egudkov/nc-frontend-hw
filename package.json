@@ -1,0 +1,22 @@
+{
+  "name": "nc-frontend-hw",
+  "version": "1.0.0",
+  "description": "\"# nc-frontend-hw\"",
+  "main": "LinkedList.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egudkov/nc-frontend-hw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egudkov/nc-frontend-hw/issues"
+  },
+  "homepage": "https://github.com/egudkov/nc-frontend-hw#readme",
+  "devDependencies": {
+    "jest": "^22.2.1"
+  }
+}
