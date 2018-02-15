@@ -29,9 +29,12 @@ class LinkedList {
     }
 
     get(index) {
-        let elem = this.head;
+        let elem = this.head.next;
 
-        for (let i = 0; i < index + 1; i++) {
+        if (elem === null || index >= this.length) {
+            throw new Error("Index is out of list's range. Exiting...");
+        }
+        for (let i = 0; i < index; i++) {
             elem = elem.next;
         }
         return elem.value;
@@ -122,6 +125,23 @@ class LinkedList {
     }
 
     toString() {
+
+        // function objToString(obj) {
+        //     let output = '{';
+        //     for (let prop in obj) {
+        //         if (obj.hasOwnProperty(prop)) {
+        //             output += `${prop}: "${obj[prop]}", `;
+        //         }
+        //
+        //     }
+        //
+        //     if (output.length > 2) {
+        //         output = output.substr(0, output.length - 2);
+        //     }
+        //
+        //     return output + '}';
+        // }
+
         let elem = this.head;
         let output = '[';
 
@@ -129,8 +149,7 @@ class LinkedList {
             elem = elem.next;
             switch (typeof elem.value) {
                 case 'object':
-                    // TODO: what if object is not empty?
-                    output += '{}';
+                    output += JSON.stringify(elem.value);
                     break;
                 case 'string':
                     output += `"${elem.value}"`;
@@ -146,6 +165,17 @@ class LinkedList {
         output += ']';
 
         return output;
+    }
+
+    reverse() {
+        let elem = this.head;
+        let reversedList = new LinkedList();
+
+        for (let i = 0; i < this.length; i++) {
+            elem = elem.next;
+        }
+
+        // TODO: TBD
     }
 }
 
