@@ -173,9 +173,11 @@ class LinkedList {
 
         for (let i = 0; i < this.length; i++) {
             elem = elem.next;
+
+            reversedList.unshift(elem.value);
         }
 
-        // TODO: TBD
+        return reversedList;
     }
 }
 
