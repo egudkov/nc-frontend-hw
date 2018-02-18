@@ -98,26 +98,3 @@ test('List reverse() returns reversed list', () => {
     expect(list.reverse().toString()).toBe('[{}, "dsfs", 44, 23, 1]');
     expect(emptyList.reverse().toString()).toBe('[]');
 });
-
-
-// test('List get() returns correct element', () => {
-//     expect(list.get(3)).toBe('dsfs');
-// });
-//
-// test('List set() sets correct element', () => {
-//     list.set(1, 'aaaaaaa');
-//     expect(list.get(1)).toBe('aaaaaaa');
-// });
-
-// test('List pop() removes one element from the end of the list and returns it', () => {
-//     list.pop();
-//     const lastElement = list.pop();
-//     expect(list.length).toBe(3);
-//     expect(lastElement).toBe('dsfs');
-// });
-
-// test('List shift() removes one element from the beginning of the list and returns it', () => {
-//     const firstElement = list.shift();
-//     expect(list.length).toBe(4);
-//     expect(firstElement).toBe(1);
-// });
