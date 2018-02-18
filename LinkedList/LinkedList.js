@@ -43,6 +43,10 @@ class LinkedList {
     set(index, value) {
         let elem = this.head;
 
+        if (index >= this.length) {
+            throw new Error("Index is out of list's range. Exiting...");
+        }
+
         for (let i = 0; i < index + 1; i++) {
             elem = elem.next;
         }
@@ -69,6 +73,10 @@ class LinkedList {
 
     // Removes one element from the end of the list and returns it
     pop() {
+        if (this.length === 0) {
+            return undefined;
+        }
+
         let elem = this.head;
 
         for (let i = 0; i < this.length - 1; i++) {
@@ -101,6 +109,10 @@ class LinkedList {
 
     // Removes one element from the beginning of the list and returns it
     shift() {
+        if (this.length === 0) {
+            return undefined;
+        }
+
         const firstElem = this.head.next;
         this.head.next = this.head.next.next;
         this.length--;
@@ -125,23 +137,6 @@ class LinkedList {
     }
 
     toString() {
-
-        // function objToString(obj) {
-        //     let output = '{';
-        //     for (let prop in obj) {
-        //         if (obj.hasOwnProperty(prop)) {
-        //             output += `${prop}: "${obj[prop]}", `;
-        //         }
-        //
-        //     }
-        //
-        //     if (output.length > 2) {
-        //         output = output.substr(0, output.length - 2);
-        //     }
-        //
-        //     return output + '}';
-        // }
-
         let elem = this.head;
         let output = '[';
 
@@ -178,6 +173,15 @@ class LinkedList {
         }
 
         return reversedList;
+    }
+
+    forEach(cb) {
+        let elem = this.head;
+
+        for (let i = 0; i < this.length; i++) {
+            elem = elem.next;
+            cb.call(null, elem.value, i, this.toString());
+        }
     }
 }
 
